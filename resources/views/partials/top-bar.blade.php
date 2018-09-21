@@ -53,7 +53,7 @@
                         <ul class="dropdown-menu">
                             <li><a href="{{ url('/user/profile') }}">My Profile</a></li>
                             <li><a href="{{ url('/saved') }}">My Collections</a></li>
-                            <li><a href="{{ url('/post/create') }}">Add Story</a></li>
+                            <li><a href="{{ url('/story/create') }}">Add Story</a></li>
                             <li><a href="{{ url('/user/settings') }}">Settings</a></li>
                             <li><a href="{{ route('logout') }}"
                                 onclick="event.preventDefault();

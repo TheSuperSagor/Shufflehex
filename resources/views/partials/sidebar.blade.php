@@ -8,11 +8,11 @@
             <li><a href="{{ route('profile.index') }}" class=""><i class="fa fa-eye"></i> View Profile</a></li>
 
             <li><a href="{{ url('/category/create') }}" class="">Add Category</a></li>
-            <li><a href="{{ url('/post/create') }}" class="">Add Story</a></li>
+            <li><a href="{{ url('/story/create') }}" class="">Add Story</a></li>
             <li><a href="{{ url('/pages/latest') }}" class="">Latest Stories</a></li>
             <li><a href="{{ url('/pages/top') }}" class="">Top Stories</a></li>
             <li><a href="{{ url('/pages/popular') }}" class="">Popular Stories</a></li>
-            <li><a href="{{ route('post.index') }}" class="">List Stories</a></li>
+            <li><a href="{{ route('story.index') }}" class="">List Stories</a></li>
             <li><a href="{{ url('/pages/blog') }}" class="">Blog Posts</a></li>
 
         </ul>

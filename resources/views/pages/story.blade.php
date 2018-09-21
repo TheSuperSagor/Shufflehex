@@ -27,6 +27,7 @@ $upVoteMatched = 0;
 $downVoteMatched = 0;
 $savedStory = 0;
 $votes = 0;
+$date = date('j F Y', strtotime($post->created_at));
 ?>
 @foreach($post->votes as $key=>$vote)
     <?php
@@ -58,7 +59,7 @@ $votes = 0;
         <div class="single-story-body">
             <div class="story-heading">
                 <h1>{{ $post->title }}</h1>
-                <p><span>Submitted by <strong>{{ $post->username }}</strong></span></p>
+                <p><span>Submitted by <strong>{{ $post->username }}</strong> at {{ $date }} in {{ $post->category }}</span></p>
             </div>
             <div class="feature-img">
                 @if($post->is_video==1)
