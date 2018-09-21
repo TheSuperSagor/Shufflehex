@@ -92,7 +92,7 @@ echo $embed->getHtml();
                         <a class="btn btn-xs" onclick="upVote({{
                         $post->id
                         }})"><span  id="btn_upVote_{{ $post->id }}" class="thumb-up glyphicon glyphicon-triangle-top" style="color: green"></span></a>
-                        <span class="vote-counter text-center">Upvote</span>
+                        <span class="vote-counter text-center" style="color: green;">Upvote</span>
                         <span class="vote-counter text-center" id="vote_count_{{ $post->id }}">{{ $votes }}</span>
                     @else
                         <a class="" onclick="upVote({{
