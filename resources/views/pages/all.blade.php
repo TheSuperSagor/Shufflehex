@@ -102,12 +102,12 @@ $date = time_elapsed_string($post->created_at, false);
 ?>
                     <div class="col-md-3 col-sm-3 col-xs-3 pr-0">
                         <div class="story-img">
-                            <a href="{{ url('post/'.$post->id.'/'.$title) }}" target="_blank"><img class="" src="{{ $post->featured_image }}"></a>
+                            <a href="{{ url('story/'.$post->id.'/'.$title) }}" target="_blank"><img class="" src="{{ $post->featured_image }}"></a>
                         </div>
                     </div>
                     <div class="col-md-9 col-sm-9 col-xs-8 pr-0">
 
-                        <h4 class="story-title"><a href="{{ url('post/'.$post->id.'/'.$title) }}" target="_blank"> {{ $post->title }}</a></h4>
+                        <h4 class="story-title"><a href="{{ url('story/'.$post->id.'/'.$title) }}" target="_blank"> {{ $post->title }}</a></h4>
                         <div class="dis-cls">
                             <p><small>Submitted by <strong><span>{{ $post->username }}</span></strong></small></p>
                         </div>
@@ -227,10 +227,10 @@ $date = time_elapsed_string($post->created_at, false);
 <script src="js/home.js"></script>
     <script>
         $( document ).ready(function() {
-            $("#latest_stories").attr("href", "{{ url('/post/latest/all') }}");
-            $("#top_stories").attr("href", "{{ url('/post/top/all') }}");
-            $("#popular_stories").attr("href", "{{ url('/post/popular/all') }}");
-            $("#trending_stories").attr("href", "{{ url('/post/trending/all') }}");
+            $("#latest_stories").attr("href", "{{ url('/story/latest/all') }}");
+            $("#top_stories").attr("href", "{{ url('/story/top/all') }}");
+            $("#popular_stories").attr("href", "{{ url('/story/popular/all') }}");
+            $("#trending_stories").attr("href", "{{ url('/story/trending/all') }}");
         });
         function upVote(post_id){
             var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');

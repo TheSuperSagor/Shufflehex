@@ -12,22 +12,22 @@
 */
 
 Route::get('/', function () {
-    return redirect('/post');
+    return redirect('/story');
 });
 
 //Route::get('/pages/add', function () {
 //    return view('pages.add');
 //});
-Route::get('/post/latest/{page}', 'PostController@latestPost');
-Route::get('/post/top/{page}', 'PostController@topPost');
-Route::get('/post/popular/{page}', 'PostController@popularPost');
-Route::get('/post/trending/{page}', 'PostController@trendingPost');
-Route::get('/post/web', 'PostController@webPost');
-Route::get('/post/images', 'PostController@imagesPost');
-Route::get('/post/videos', 'PostController@videosPost');
-Route::get('/post/articles', 'PostController@articlesPost');
-Route::get('/post/lists', 'PostController@listsPost');
-Route::get('/post/polls', 'PostController@pollsPost');
+Route::get('/story/latest/{page}', 'PostController@latestPost');
+Route::get('/story/top/{page}', 'PostController@topPost');
+Route::get('/story/popular/{page}', 'PostController@popularPost');
+Route::get('/story/trending/{page}', 'PostController@trendingPost');
+Route::get('/story/web', 'PostController@webPost');
+Route::get('/story/images', 'PostController@imagesPost');
+Route::get('/story/videos', 'PostController@videosPost');
+Route::get('/story/articles', 'PostController@articlesPost');
+Route::get('/story/lists', 'PostController@listsPost');
+Route::get('/story/polls', 'PostController@pollsPost');
 
 
 Route::get('/pages/all', function () {
@@ -52,10 +52,10 @@ Route::get('/pages/support', function () {
     return view('pages.support');
 });
 
-Route::resource('/post', 'PostController');
+Route::resource('/story', 'PostController');
 
-Route::get('/post/{post}/{title}', 'PostController@showPost');
-Route::get('/post/{id}/story/view', 'PostController@viewPost');
+Route::get('/story/{post}/{title}', 'PostController@showPost');
+Route::get('/story/{id}/story/view', 'PostController@viewPost');
 
 Auth::routes();
 

@@ -27,6 +27,7 @@ $upVoteMatched = 0;
 $downVoteMatched = 0;
 $savedStory = 0;
 $votes = 0;
+$date = date('j F Y', strtotime($post->created_at));
 ?>
 @foreach($post->votes as $key=>$vote)
     <?php
@@ -58,7 +59,7 @@ $votes = 0;
         <div class="single-story-body">
             <div class="story-heading">
                 <h1>{{ $post->title }}</h1>
-                <p><span>Submitted by <strong>{{ $post->username }}</strong></span></p>
+                <p><span>Submitted by <strong>{{ $post->username }}</strong> at {{ $date }} in {{ $post->category }}</span></p>
             </div>
             <div class="feature-img">
                 @if($post->is_video==1)
@@ -69,7 +70,7 @@ echo $embed->getHtml();
                 <img class="img-responsive" src="{{ $post->featured_image }}">
                 @endif
                 <div class="link-source">
-                    <span class="pull-left">source: <a href="#">{{ $post->domain }}</a></span>
+                    <span class="pull-left">source: <a href="{{ $post->link }}" target="_blank" rel="nofollow">{{ $post->domain }}</a></span>
                 </div>
             </div>
 
@@ -82,7 +83,7 @@ echo $embed->getHtml();
             <div class="row">
                 <div class="col-md-12">
                     @if($post->is_link==1)
-                        <a class="btn btn-sm btn-danger dis-blk" href="{{ url('post/'.$post->id.'/story/view') }}">Read Full Story</a>
+                        <a class="btn btn-sm btn-danger dis-blk" href="{{ url('story/'.$post->id.'/story/view') }}" target="_blank" rel="nofollow">Read Full Story</a>
                     @endif
                 </div>
             </div>
