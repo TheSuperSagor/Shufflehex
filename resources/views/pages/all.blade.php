@@ -165,7 +165,14 @@ $date = time_elapsed_string($post->created_at, false);
             </div>
 
         @endforeach
+
+
 </div>
+    <div class="no-post-message" style="text-align: center; padding-bottom: 10px; color: #534d4d;font-weight: bold">
+    </div>
+    <div class="load-more" style="text-align: center; padding-bottom: 10px;">
+    <label id="load-more-button" class="btn load-more-button" data-offset="0" style=" background: white;color: #ee5253;border: 1px solid #e8e8e8;">Load More</label>
+    </div>
     <!-- save url modal -->
     <div class="save-page-modal modal fade" id="saveStoryModal" role="dialog">
         <div class="modal-dialog">
@@ -225,6 +232,7 @@ $date = time_elapsed_string($post->created_at, false);
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.0/jquery-confirm.min.js"></script>
 <script src="js/home.js"></script>
+<script src="js/ajax.js"></script>
     <script>
         $( document ).ready(function() {
             $("#latest_stories").attr("href", "{{ url('/story/latest/all') }}");

@@ -29,6 +29,8 @@ Route::get('/story/articles', 'PostController@articlesPost');
 Route::get('/story/lists', 'PostController@listsPost');
 Route::get('/story/polls', 'PostController@pollsPost');
 
+Route::post('/ajax/get_more_post', 'AjaxController@get_more_post');
+
 
 Route::get('/pages/all', function () {
     return view('pages.all');

@@ -29,7 +29,7 @@ class PostController extends Controller
         if (isset(Auth::user()->id) && !empty(Auth::user()->id)){
             $folders = Folder::where('user_id','=',Auth::user()->id)->get();
         }
-        $posts = Post::with('votes')->with('comments')->with('saved_stories')->orderBy('views', 'DESC')->get();
+        $posts = Post::with('votes')->with('comments')->with('saved_stories')->orderBy('views', 'DESC')->offset(0)->limit(5)->get();
         $page1 = 'all';
 
         if (isset(Auth::user()->id) && !empty(Auth::user()->id)) {
