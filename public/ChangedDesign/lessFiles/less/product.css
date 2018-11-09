@@ -1,0 +1,22 @@
+.add-product form {
+  padding: 2%;
+}
+.product {
+  display: inline-block;
+}
+.product .product-box .product-price {
+  font-size: 24px;
+  color: #ff342f;
+  font-weight: 700;
+}
+.product .product-box .product-media img.original {
+  width: 100% !important;
+}
+.product .product-box .product-media .xzoom-thumbs {
+  display: inline-block;
+  margin-top: 10px;
+}
+.product .product-box .product-media .xzoom-thumbs .xzoom-gallery {
+  margin: 0 !important;
+}
+/*# sourceMappingURL=product.css.map */

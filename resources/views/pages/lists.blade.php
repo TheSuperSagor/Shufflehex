@@ -15,6 +15,11 @@
 @endsection
 
 @section('content')
+
+    {{----------------------------- store current url to session -----------------------}}
+    <?php session(['last_page' => url()->current()]); ?>
+    {{-------------------------------------------------------------------------------------}}
+
     <div class="box">
         <div class="row box-header">
             <div class="col-md-12"><h3>Lists</h3></div>

@@ -163,6 +163,7 @@ return [
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
         'Cohensive\Embed\EmbedServiceProvider',
+        Intervention\Image\ImageServiceProvider::class,
 
         /*
          * Package Service Providers...
@@ -229,7 +230,8 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
         'Form' => Collective\Html\FormFacade::class,
         'HTML' => Collective\Html\HtmlFacade::class,
-        'EmbedVideo' => 'Cohensive\Embed\Facades\Embed'
+        'EmbedVideo' => 'Cohensive\Embed\Facades\Embed',
+        'Intervention' => Intervention\Image\Facades\Image::class,
 
     ],
 
