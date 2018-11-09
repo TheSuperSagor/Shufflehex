@@ -6,13 +6,21 @@ use Illuminate\Database\Eloquent\Model;
 
 class Post extends Model {
 	protected $fillable = [
-		'title', 'link', 'featured_image', 'category', 'description', 'user_id', 'tags',
+		'title', 'link', 'featured_image', 'story_list_image', 'related_story_image', 'shuffle_box_image', 'category', 'description', 'user_id', 'tags',
 	];
 	protected $dates = ['deleted_at'];
 
 	public function votes() {
 		return $this->hasMany('App\Vote');
 	}
+
+    public function comment_votes() {
+        return $this->hasMany('App\CommentVote');
+    }
+
+    public function comment_reply_votes() {
+        return $this->hasMany('App\CommentReplyVote');
+    }
 
 	public function comments() {
 		return $this->hasMany('App\Comment');

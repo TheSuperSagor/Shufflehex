@@ -10,7 +10,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a href="{{ url('/post') }}"><img class="logo" src="{{ asset('img/logo/shufflehex.png') }}"></a>
+          <a href="{{ url('/story') }}"><img class="logo" src="{{ asset('img/logo/shufflehex.png') }}"></a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -21,9 +21,9 @@
             </div>
           </form>
           <ul class="nav navbar-nav">
-            <li ><a href="#">Stories<span class="sr-only">(current)</span></a></li>
-            <li><a href="#">Products</a></li>
-            <li><a href="#">Projects</a></li>
+            <li ><a href="{{ url('/story') }}">Stories<span class="sr-only">(current)</span></a></li>
+            <li><a href="{{ url('/products') }}">Products</a></li>
+            <li><a href="{{ url('/projects') }}">Projects</a></li>
             <li><a href="#">Add New</a></li>
           </ul>
         <div class="pull-right profile">

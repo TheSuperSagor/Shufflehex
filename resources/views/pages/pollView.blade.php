@@ -16,6 +16,10 @@
 @endsection
 @section('content')
 
+    {{----------------------------- store current url to session -----------------------}}
+    <?php session(['last_page' => url()->current()]); ?>
+    {{-------------------------------------------------------------------------------------}}
+
     <div class="box poll-details">
         <div class="box-header">
             <h3>{{ $post->title }}</h3>
@@ -136,7 +140,7 @@ $upVoteMatched = 1;
                             <label>Tags</label>
                             <input name="tags" id="tags" class="form-control" placeholder="tag1,tag2,tag3" type="text">
                         </div>
-                        <input type="hidden" name="user_id" value="{{ Auth::user()->id }}">
+                        {{--<input type="hidden" name="user_id" value="{{ Auth::user()->id }}">--}}
                         <input type="hidden" name="post_id" value="{{ $post->id }}">
                         <button type="submit" name="storySubmit" id="storySubmit" class="btn-link-submit btn btn-block btn-danger">Add Item</button>
                     </form>

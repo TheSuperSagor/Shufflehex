@@ -70,23 +70,23 @@
     <div id="profile-content">
         @foreach($posts as $post)
 
+            <?php
+            $title = preg_replace('/\s+/', '-', $post->title);
+            $title = preg_replace('/[^A-Za-z0-9\-]/', '', $title);
+            $title = $title.'-'.$post->id;
 
-                           <?php
-$title = preg_replace('/\s+/', '-', $post->title);
-$title = preg_replace('/[^A-Za-z0-9\-]/', '', $title);
-
-?>
+            ?>
 
         <div class="story-item">
                 <div class="row">
                     <div class="col-md-3 col-sm-9 col-xs-3">
                         <div class="story-img">
-                            <a href="{{ url('post/'.$post->id.'/'.$title) }}" target="_blank"><img class="" src="{{ $post->featured_image }}"></a>
+                            <a href="{{ url('story/'.$title) }}"><img class="" src="{{ $post->featured_image }}"></a>
                         </div>
                     </div>
                     <div class="col-md-9 col-sm-9 col-xs-9">
 
-                        <h4 class="story-title"><a href="{{ url('post/'.$post->id.'/'.$title) }}" target="_blank"> {{ $post->title }}</a></h4>
+                        <h4 class="story-title"><a href="{{ url('story/'.$title) }}"> {{ $post->title }}</a></h4>
                         <?php
 $description = substr($post->description, 0, 120)
 

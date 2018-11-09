@@ -19,6 +19,9 @@ class CreatePostsTable extends Migration
             $table->string('link')->nullable()->unique();
             $table->string('domain')->nullable();
             $table->string('featured_image' , 1024)->nullable();
+            $table->string('story_list_image' , 1024)->nullable();
+            $table->string('related_story_image' , 1024)->nullable();
+            $table->string('shuffle_box_image' , 1024)->nullable();
             $table->string('category')->nullable();
             $table->longText('description')->nullable();
             $table->string('tags')->nullable();

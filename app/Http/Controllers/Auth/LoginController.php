@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Http\Request;
 
 class LoginController extends Controller
 {
@@ -25,6 +26,7 @@ class LoginController extends Controller
      *
      * @var string
      */
+
     protected $redirectTo = '/';
 
     /**
@@ -40,5 +42,40 @@ class LoginController extends Controller
     public function username()
     {
         return 'username';
+    }
+
+    public function authenticated($request, $user )
+    {
+        if (session()->has('last_page')) {
+//            return Redirect::to($url);
+            $page = session('last_page');
+            return redirect()->to($page);
+        } else{
+            return redirect()->route('/story');
+        }
+//        return redirect()->intended($this->redirectPath());
+    }
+
+//    public function logout(Request $request)
+//    {
+//        $this->performLogout($request);
+//        if (session()->has('last_page')) {
+////            return Redirect::to($url);
+//            return redirect()->to(session('last_page'));
+//        } else{
+//            return redirect()->route('story');
+//        }
+//    }
+
+    public function logout(Request $request)
+    {
+        $this->guard()->logout();
+        if (session()->has('last_page')) {
+//            return Redirect::to($url);
+            $page = session('last_page');
+            return redirect()->to($page);
+        } else{
+            return redirect()->route('/story');
+        }
     }
 }
